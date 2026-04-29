@@ -1,284 +1,224 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<<<<<<< HEAD
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dr. Aaron Rinhel</title>
-<link rel="stylesheet" href="style.css">
-=======
-  <meta charset="UTF-8">
-  <title>Dr. Aaron Rinhel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --black: #0A0A0A;
-      --black-soft: #121212;
-      --gold: #C5A46D;
-      --gold-light: #E5C88B;
-      --text: #EAEAEA;
-      --text-muted: #A0A0A0;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
+<style>
+:root {
+  --black: #0A0A0A;
+  --gold: #C5A46D;
+  --text: #EAEAEA;
+  --muted: #A0A0A0;
+}
 
-    body {
-      background: radial-gradient(circle at top, #111, #000);
-      color: var(--text);
-    }
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter', sans-serif;
+}
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
+body {
+  background:#000;
+  color:var(--text);
+}
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 0;
-      border-bottom: 1px solid #222;
-    }
+.container {
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--gold);
-      font-weight: 500;
-    }
+header {
+  display:flex;
+  justify-content:space-between;
+  padding:25px 0;
+  border-bottom:1px solid #222;
+}
 
-    nav a {
-      margin-left: 25px;
-      text-decoration: none;
-      color: var(--text-muted);
-      transition: 0.3s;
-    }
+.logo {
+  color:var(--gold);
+  font-weight:500;
+}
 
-    nav a:hover {
-      color: var(--gold);
-    }
+nav a {
+  margin-left:25px;
+  color:var(--muted);
+  text-decoration:none;
+}
 
-    .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 120px 0;
-    }
+nav a:hover {
+  color:var(--gold);
+}
 
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 64px;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
+/* HERO */
+.hero {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:120px 0;
+}
 
-    .hero p {
-      max-width: 500px;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 30px;
-    }
+.hero h1 {
+  font-family:'Playfair Display', serif;
+  font-size:64px;
+  color:var(--gold);
+  margin-bottom:20px;
+}
 
-    .btn {
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      padding: 12px 26px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
+.hero p {
+  max-width:500px;
+  color:var(--muted);
+  margin-bottom:30px;
+}
 
-    .btn:hover {
-      background: var(--gold);
-      color: black;
-    }
+.hero img {
+  width:320px;
+  border-radius:8px;
+}
 
-    .section {
-      padding: 100px 0;
-      border-top: 1px solid #222;
-    }
+/* BUTTON */
+.btn {
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:14px 30px;
+  text-decoration:none;
+}
 
-    .section h2 {
-      color: var(--gold);
-      margin-bottom: 30px;
-      font-family: 'Playfair Display', serif;
-    }
+.btn:hover {
+  background:var(--gold);
+  color:black;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
+/* SECTION */
+.section {
+  padding:100px 0;
+  border-top:1px solid #222;
+}
 
-    .card {
-      background: var(--black-soft);
-      padding: 30px;
-      border: 1px solid #222;
-      transition: 0.3s;
-    }
+.section h2 {
+  font-family:'Playfair Display', serif;
+  color:var(--gold);
+  margin-bottom:30px;
+}
 
-    .card:hover {
-      border-color: var(--gold);
-      transform: translateY(-4px);
-    }
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
 
-    .highlight {
-      background: #111;
-      border-left: 2px solid var(--gold);
-      padding: 30px;
-    }
+.card {
+  background:#111;
+  padding:30px;
+  border:1px solid #222;
+}
 
-    .contact {
-      text-align: center;
-    }
+/* HIGHLIGHT */
+.highlight {
+  background:#111;
+  padding:30px;
+  border-left:2px solid var(--gold);
+}
 
-    footer {
-      text-align: center;
-      padding: 40px 0;
-      color: #777;
-      border-top: 1px solid #222;
-    }
+/* CONTACT */
+.contact {
+  text-align:center;
+}
 
-  </style>
->>>>>>> d32f417 (update site)
+/* FLOAT BUTTON */
+.whatsapp {
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  background:var(--gold);
+  color:black;
+  padding:14px 20px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:40px 0;
+  color:#777;
+  border-top:1px solid #222;
+}
+
+</style>
 </head>
 
 <body>
 
-<<<<<<< HEAD
-<header>
-    <div class="logo">AR</div>
-    <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#atuacao">Atuação</a>
-        <a href="#contato">Contato</a>
-    </nav>
-</header>
-
-<section class="hero">
-    <h1>Medicina de Alta Performance</h1>
-    <p>Estratégia clínica avançada para otimização física, metabólica e cognitiva.</p>
-    
-    <a href="https://wa.me/5516993275080">
-        <button>Agendar consulta</button>
-    </a>
-</section>
-
-<section id="sobre" class="section">
-    <h2>Sobre</h2>
-    <p>
-        Médico com foco em performance humana, composição corporal e estratégias avançadas de otimização metabólica.
-        Integra ciência, tecnologia e abordagem clínica personalizada para resultados consistentes e mensuráveis.
-    </p>
-</section>
-
-<section id="atuacao" class="section">
-    <h2>Atuação</h2>
-    <div class="cards">
-        <div class="card">Otimização metabólica</div>
-        <div class="card">Performance física</div>
-        <div class="card">Composição corporal</div>
-        <div class="card">Longevidade e saúde</div>
-    </div>
-</section>
-
-<section class="section destaque">
-    <h2>Diferencial</h2>
-    <p>
-        Abordagem baseada em dados, integração de múltiplos sistemas biológicos e foco em performance real.
-        Cada protocolo é desenhado individualmente com base em métricas objetivas e acompanhamento contínuo.
-    </p>
-</section>
-
-<section id="contato" class="section contato">
-    <h2>Contato</h2>
-    <p>Atendimento personalizado mediante agendamento.</p>
-
-    <a href="https://wa.me/5516993275080">
-        <button>Falar no WhatsApp</button>
-    </a>
-</section>
-
-<footer>
-    <p>Dr. Aaron Rinhel • CRM/SP 209595</p>
-</footer>
-=======
 <div class="container">
 
 <header>
-  <div class="logo">
-    <img src="assets/logo.png" width="32">
-    <span>Dr. Aaron Rinhel</span>
-  </div>
-
+  <div class="logo">Dr. Aaron Rinhel</div>
   <nav>
     <a href="#sobre">Sobre</a>
     <a href="#atuacao">Atuação</a>
-    <a href="#diferencial">Diferencial</a>
     <a href="#contato">Contato</a>
   </nav>
 </header>
 
 <section class="hero">
   <div>
-    <h1>Medicina de Alta Performance</h1>
+    <h1>Precisão clínica para indivíduos que exigem mais do próprio corpo.</h1>
     <p>
-      Protocolos clínicos avançados para indivíduos que exigem performance acima da média.
-      Integração entre ciência, tecnologia e estratégia para otimização real.
+      Protocolos médicos avançados focados em performance física, composição corporal e longevidade.
     </p>
-
-    <a class="btn" href="https://wa.me/5516993275080">
-      Agendar consulta
-    </a>
+    <a class="btn" href="https://wa.me/5516993275080">Agendar avaliação</a>
   </div>
 
-  <img src="assets/logo.png" width="140">
+  <img src="assets/foto.jpg">
 </section>
 
 <section id="sobre" class="section">
-  <h2>Sobre</h2>
+  <h2>Abordagem</h2>
   <div class="highlight">
-    Médico CRM/SP 209595 com atuação focada em otimização metabólica, performance humana e precisão clínica.
-    Abordagem baseada em dados e acompanhamento contínuo.
+    Medicina orientada por dados, com foco em resultado mensurável.
+    Protocolos personalizados com base em análise clínica individual.
   </div>
 </section>
 
 <section id="atuacao" class="section">
-  <h2>Áreas de Atuação</h2>
+  <h2>Áreas de atuação</h2>
+
   <div class="grid">
     <div class="card">Otimização metabólica</div>
-    <div class="card">Performance física e cognitiva</div>
+    <div class="card">Performance física</div>
     <div class="card">Composição corporal</div>
-    <div class="card">Longevidade e prevenção</div>
+    <div class="card">Longevidade</div>
   </div>
 </section>
 
-<section id="diferencial" class="section">
-  <h2>Diferencial</h2>
+<section class="section">
+  <h2>Modelo de atendimento</h2>
+
   <div class="highlight">
-    Cada paciente é avaliado de forma individual com base em métricas objetivas.
-    Protocolos personalizados, acompanhamento contínuo e foco em resultado mensurável.
+    Atendimento limitado, com foco em acompanhamento próximo e resultados consistentes.
+    Protocolos não são padronizados.
   </div>
 </section>
 
 <section id="contato" class="section contact">
-  <h2>Contato</h2>
+  <h2>Iniciar acompanhamento</h2>
+
   <p>Atendimento mediante agendamento.</p>
 
   <br>
 
   <a class="btn" href="https://wa.me/5516993275080">
-    Falar no WhatsApp
+    Solicitar avaliação
   </a>
 
-  <p style="margin-top:20px; color:#888;">
+  <p style="margin-top:20px;color:#777;">
     +55 16 99327-5080<br>
     aaron.rinhel@unesp.br
   </p>
@@ -289,7 +229,10 @@
 </footer>
 
 </div>
->>>>>>> d32f417 (update site)
+
+<a class="whatsapp" href="https://wa.me/5516993275080">
+  WhatsApp
+</a>
 
 </body>
 </html>

@@ -1,47 +1,101 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    color: #222;
-}
-
-/* MENU */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+    font-family: 'Helvetica Neue', sans-serif;
     background: #000;
     color: #fff;
 }
 
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    font-weight: bold;
+    color: #d4af37;
+}
+
 nav a {
-    color: #fff;
-    margin-left: 15px;
+    margin-left: 20px;
     text-decoration: none;
+    color: #aaa;
+}
+
+nav a:hover {
+    color: #d4af37;
 }
 
 /* HERO */
 .hero {
-    height: 60vh;
-    background: linear-gradient(to right, #000, #444);
-    color: white;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    padding: 0 60px;
+}
+
+.hero h1 {
+    font-size: 56px;
+    color: #d4af37;
+    max-width: 700px;
+}
+
+.hero p {
+    max-width: 500px;
+    margin-top: 10px;
+    color: #ccc;
+}
+
+button {
+    margin-top: 20px;
+    padding: 14px 28px;
+    border: none;
+    background: #d4af37;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 /* SEÇÕES */
-section {
-    padding: 60px 20px;
-    max-width: 800px;
-    margin: auto;
+.section {
+    padding: 80px 60px;
+    max-width: 1000px;
 }
 
-/* RODAPÉ */
+.section h2 {
+    color: #d4af37;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+/* DESTAQUE */
+.destaque {
+    background: #111;
+}
+
+/* CONTATO */
+.contato {
+    text-align: center;
+}
+
+/* FOOTER */
 footer {
     text-align: center;
-    padding: 20px;
-    background: #000;
-    color: white;
+    padding: 30px;
+    border-top: 1px solid #222;
+    color: #777;
 }

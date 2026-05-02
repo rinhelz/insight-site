@@ -3,236 +3,648 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Aaron Rinhel</title>
+<meta name="description" content="Clínica médica premium para avaliação integrativa, prevenção, longevidade e acompanhamento clínico personalizado.">
+<title>Insight Clínica Premium</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --black: #0A0A0A;
-  --gold: #C5A46D;
-  --text: #EAEAEA;
-  --muted: #A0A0A0;
+  --ink: #0b0f10;
+  --deep: #111817;
+  --panel: #f8f5ee;
+  --line: rgba(214, 197, 159, 0.32);
+  --gold: #b8955f;
+  --sage: #7d9188;
+  --text: #f6f1e8;
+  --muted: #c7c1b6;
+  --dark-muted: #5b635f;
 }
 
 * {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background:#000;
-  color:var(--text);
+  background: var(--ink);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
 }
 
 .container {
-  width:90%;
-  max-width:1200px;
-  margin:auto;
+  width: min(1120px, calc(100% - 40px));
+  margin: auto;
 }
 
 header {
-  display:flex;
-  justify-content:space-between;
-  padding:25px 0;
-  border-bottom:1px solid #222;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .logo {
-  color:var(--gold);
-  font-weight:500;
+  color: var(--text);
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  letter-spacing: 0;
+}
+
+.logo span {
+  display: block;
+  color: var(--gold);
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 nav a {
-  margin-left:25px;
-  color:var(--muted);
-  text-decoration:none;
+  color: var(--muted);
+  font-size: 14px;
+  text-decoration: none;
 }
 
 nav a:hover {
-  color:var(--gold);
+  color: var(--gold);
 }
 
-/* HERO */
 .hero {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:120px 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  align-items: center;
+  gap: 64px;
+  min-height: 78vh;
+  padding: 84px 0;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
 }
 
 .hero h1 {
-  font-family:'Playfair Display', serif;
-  font-size:64px;
-  color:var(--gold);
-  margin-bottom:20px;
+  max-width: 780px;
+  color: var(--text);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(44px, 7vw, 82px);
+  font-weight: 600;
+  line-height: 0.98;
+  margin-bottom: 26px;
 }
 
 .hero p {
-  max-width:500px;
-  color:var(--muted);
-  margin-bottom:30px;
+  max-width: 590px;
+  color: var(--muted);
+  font-size: 18px;
+  margin-bottom: 34px;
 }
 
-.hero img {
-  width:320px;
-  border-radius:8px;
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
 }
 
-/* BUTTON */
 .btn {
-  border:1px solid var(--gold);
-  color:var(--gold);
-  padding:14px 30px;
-  text-decoration:none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: #111;
+  padding: 13px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--gold);
 }
 
 .btn:hover {
-  background:var(--gold);
-  color:black;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
 }
 
-/* SECTION */
+.hero-panel {
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(145deg, rgba(248, 245, 238, 0.12), rgba(125, 145, 136, 0.08)),
+    var(--deep);
+  padding: 36px;
+  position: relative;
+}
+
+.hero-panel:before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(184, 149, 95, 0.22);
+  pointer-events: none;
+}
+
+.panel-title {
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  line-height: 1.1;
+  margin-bottom: 28px;
+}
+
+.metric {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.metric strong {
+  display: block;
+  color: var(--text);
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.metric span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+}
+
 .section {
-  padding:100px 0;
-  border-top:1px solid #222;
+  padding: 92px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.section.light {
+  background: var(--panel);
+  color: var(--ink);
+  margin-inline: calc(50% - 50vw);
+  padding-inline: calc(50vw - 50%);
+}
+
+.section-header {
+  display: grid;
+  grid-template-columns: 0.75fr 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 42px;
 }
 
 .section h2 {
-  font-family:'Playfair Display', serif;
-  color:var(--gold);
-  margin-bottom:30px;
+  color: inherit;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(34px, 4vw, 54px);
+  font-weight: 600;
+  line-height: 1.05;
 }
 
-/* GRID */
+.section-header p {
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.light .section-header p {
+  color: var(--dark-muted);
+}
+
 .grid {
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
 }
 
 .card {
-  background:#111;
-  padding:30px;
-  border:1px solid #222;
+  min-height: 210px;
+  border: 1px solid rgba(184, 149, 95, 0.24);
+  background: rgba(255, 255, 255, 0.035);
+  padding: 28px;
 }
 
-/* HIGHLIGHT */
+.light .card {
+  background: #fff;
+  border-color: rgba(11, 15, 16, 0.08);
+  box-shadow: 0 18px 42px rgba(17, 24, 23, 0.07);
+}
+
+.card h3 {
+  color: var(--gold);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.light .card p {
+  color: var(--dark-muted);
+}
+
 .highlight {
-  background:#111;
-  padding:30px;
-  border-left:2px solid var(--gold);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  border-left: 2px solid var(--gold);
+  background: rgba(255, 255, 255, 0.035);
+  padding: 36px;
 }
 
-/* CONTACT */
+.highlight p {
+  color: var(--muted);
+}
+
+.light .highlight {
+  background: #fff;
+  border-color: var(--gold);
+  box-shadow: 0 18px 42px rgba(17, 24, 23, 0.07);
+}
+
+.light .highlight p {
+  color: var(--dark-muted);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(184, 149, 95, 0.26);
+  border: 1px solid rgba(184, 149, 95, 0.26);
+}
+
+.step {
+  background: var(--deep);
+  padding: 28px;
+}
+
+.step span {
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+}
+
+.step h3 {
+  margin: 18px 0 10px;
+  font-size: 17px;
+}
+
+.step p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
 .contact {
-  text-align:center;
+  text-align: center;
 }
 
-/* FLOAT BUTTON */
+.contact h2 {
+  max-width: 760px;
+  margin: 0 auto 18px;
+}
+
+.contact p {
+  max-width: 620px;
+  margin: 0 auto 28px;
+  color: var(--muted);
+}
+
+.contact-details {
+  margin-top: 26px;
+  color: #8f887c;
+  font-size: 14px;
+}
+
 .whatsapp {
-  position:fixed;
-  bottom:30px;
-  right:30px;
-  background:var(--gold);
-  color:black;
-  padding:14px 20px;
-  text-decoration:none;
-  font-weight:bold;
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  background: var(--gold);
+  color: #111;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
 }
 
-/* FOOTER */
 footer {
-  text-align:center;
-  padding:40px 0;
-  color:#777;
-  border-top:1px solid #222;
+  padding: 36px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #8f887c;
+  font-size: 13px;
+  text-align: center;
 }
 
+@media (max-width: 900px) {
+  header,
+  nav,
+  .actions {
+    align-items: flex-start;
+  }
+
+  header,
+  .hero,
+  .section-header,
+  .highlight {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    display: grid;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    gap: 32px;
+    min-height: auto;
+    padding: 64px 0;
+  }
+
+  .grid,
+  .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .container {
+    width: min(100% - 28px, 1120px);
+  }
+
+  nav {
+    gap: 14px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-panel,
+  .highlight,
+  .card,
+  .step {
+    padding: 24px;
+  }
+
+  .grid,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .whatsapp {
+    right: 14px;
+    bottom: 14px;
+  }
+}
 </style>
 </head>
 
 <body>
-
 <div class="container">
+  <header>
+    <div class="logo">
+      Insight
+      <span>Clínica Premium</span>
+    </div>
+    <nav aria-label="Navegação principal">
+      <a href="#clinica">Clínica</a>
+      <a href="#especialidades">Especialidades</a>
+      <a href="#jornada">Jornada</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
 
-<header>
-  <div class="logo">Dr. Aaron Rinhel</div>
-  <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#atuacao">Atuação</a>
-    <a href="#contato">Contato</a>
-  </nav>
-</header>
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Medicina personalizada e acompanhamento reservado</div>
+        <h1>Clínica premium para quem busca clareza, prevenção e cuidado contínuo.</h1>
+        <p>
+          Uma experiência médica discreta, precisa e profundamente individualizada, com avaliação clínica ampla,
+          decisões baseadas em dados e acompanhamento próximo em cada etapa do plano de cuidado.
+        </p>
+        <div class="actions">
+          <a class="btn" href="https://wa.me/5516993275080">Agendar avaliação</a>
+          <a class="btn secondary" href="#jornada">Conhecer a jornada</a>
+        </div>
+      </div>
 
-<section class="hero">
-  <div>
-    <h1>Precisão clínica para indivíduos que exigem mais do próprio corpo.</h1>
-    <p>
-      Protocolos médicos avançados focados em performance física, composição corporal e longevidade.
-    </p>
-    <a class="btn" href="https://wa.me/5516993275080">Agendar avaliação</a>
-  </div>
+      <aside class="hero-panel" aria-label="Diferenciais da clínica">
+        <div class="panel-title">Atendimento de alta atenção, com tempo, método e confidencialidade.</div>
+        <div class="metric">
+          <div class="number">01</div>
+          <div>
+            <strong>Consulta sem pressa</strong>
+            <span>Escuta clínica qualificada, revisão de histórico, hábitos, exames e objetivos reais.</span>
+          </div>
+        </div>
+        <div class="metric">
+          <div class="number">02</div>
+          <div>
+            <strong>Plano individual</strong>
+            <span>Condutas ajustadas ao perfil metabólico, rotina, riscos e prioridades de cada paciente.</span>
+          </div>
+        </div>
+        <div class="metric">
+          <div class="number">03</div>
+          <div>
+            <strong>Acompanhamento longitudinal</strong>
+            <span>Reavaliações estruturadas para acompanhar evolução, adesão e necessidade de ajustes.</span>
+          </div>
+        </div>
+      </aside>
+    </section>
 
-  <img src="assets/foto.jpg">
-</section>
+    <section id="clinica" class="section light">
+      <div class="section-header">
+        <h2>Uma clínica desenhada para cuidado médico de excelência.</h2>
+        <p>
+          A Insight une rigor técnico, ambiente reservado e uma jornada assistencial organizada para pacientes que
+          valorizam precisão, privacidade e continuidade. O foco é entender o contexto completo antes de propor
+          qualquer intervenção.
+        </p>
+      </div>
 
-<section id="sobre" class="section">
-  <h2>Abordagem</h2>
-  <div class="highlight">
-    Medicina orientada por dados, com foco em resultado mensurável.
-    Protocolos personalizados com base em análise clínica individual.
-  </div>
-</section>
+      <div class="highlight">
+        <p>
+          Cada atendimento começa com uma leitura aprofundada da saúde atual: queixas, histórico familiar, composição
+          corporal, marcadores laboratoriais, sono, rotina, alimentação, treino e fatores de risco.
+        </p>
+        <p>
+          A partir dessa análise, o plano é construído com metas realistas, monitoramento clínico e ajustes periódicos.
+          A experiência é premium porque combina ciência, tempo médico e atenção aos detalhes.
+        </p>
+      </div>
+    </section>
 
-<section id="atuacao" class="section">
-  <h2>Áreas de atuação</h2>
+    <section id="especialidades" class="section">
+      <div class="section-header">
+        <h2>Frentes de cuidado</h2>
+        <p>
+          Atuação voltada para prevenção, performance sustentável e longevidade, sempre com indicação individual e
+          responsabilidade clínica.
+        </p>
+      </div>
 
-  <div class="grid">
-    <div class="card">Otimização metabólica</div>
-    <div class="card">Performance física</div>
-    <div class="card">Composição corporal</div>
-    <div class="card">Longevidade</div>
-  </div>
-</section>
+      <div class="grid">
+        <article class="card">
+          <h3>Avaliação integrativa</h3>
+          <p>Análise ampla de saúde, sintomas, exames e estilo de vida para orientar decisões clínicas com mais precisão.</p>
+        </article>
+        <article class="card">
+          <h3>Longevidade e prevenção</h3>
+          <p>Estratégias para reduzir riscos, acompanhar marcadores importantes e preservar vitalidade ao longo do tempo.</p>
+        </article>
+        <article class="card">
+          <h3>Saúde metabólica</h3>
+          <p>Acompanhamento de peso, composição corporal, resistência insulínica, energia, apetite e rotina alimentar.</p>
+        </article>
+        <article class="card">
+          <h3>Performance física</h3>
+          <p>Cuidado médico para pacientes ativos que buscam evoluir com segurança, recuperação adequada e equilíbrio hormonal.</p>
+        </article>
+        <article class="card">
+          <h3>Equilíbrio hormonal</h3>
+          <p>Investigação criteriosa de sinais clínicos e exames, com condutas individualizadas quando houver indicação.</p>
+        </article>
+        <article class="card">
+          <h3>Acompanhamento premium</h3>
+          <p>Agenda limitada, comunicação organizada e revisões programadas para manter o plano vivo e coerente com a rotina.</p>
+        </article>
+      </div>
+    </section>
 
-<section class="section">
-  <h2>Modelo de atendimento</h2>
+    <section id="jornada" class="section">
+      <div class="section-header">
+        <h2>Jornada do paciente</h2>
+        <p>
+          Um processo claro, elegante e objetivo, pensado para transformar informação clínica em decisões práticas.
+        </p>
+      </div>
 
-  <div class="highlight">
-    Atendimento limitado, com foco em acompanhamento próximo e resultados consistentes.
-    Protocolos não são padronizados.
-  </div>
-</section>
+      <div class="steps">
+        <article class="step">
+          <span>01</span>
+          <h3>Triagem inicial</h3>
+          <p>Entendimento do objetivo, perfil clínico e melhor formato de atendimento.</p>
+        </article>
+        <article class="step">
+          <span>02</span>
+          <h3>Consulta premium</h3>
+          <p>Anamnese detalhada, exame clínico e revisão de dados relevantes.</p>
+        </article>
+        <article class="step">
+          <span>03</span>
+          <h3>Plano de cuidado</h3>
+          <p>Estratégia personalizada com prioridades, exames, condutas e rotina de acompanhamento.</p>
+        </article>
+        <article class="step">
+          <span>04</span>
+          <h3>Reavaliação</h3>
+          <p>Ajustes conduzidos por evolução clínica, adesão, segurança e novos resultados.</p>
+        </article>
+      </div>
+    </section>
 
-<section id="contato" class="section contact">
-  <h2>Iniciar acompanhamento</h2>
+    <section class="section light">
+      <div class="section-header">
+        <h2>Premium é ter precisão antes da prescrição.</h2>
+        <p>
+          A clínica não trabalha com fórmulas prontas. O cuidado é construído com critério médico, comunicação clara e
+          respeito ao tempo necessário para investigar, decidir e acompanhar.
+        </p>
+      </div>
 
-  <p>Atendimento mediante agendamento.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Privacidade</h3>
+          <p>Ambiente reservado, atendimento pontual e experiência discreta desde o primeiro contato.</p>
+        </article>
+        <article class="card">
+          <h3>Clareza</h3>
+          <p>Explicações objetivas para que o paciente compreenda prioridades, riscos e próximos passos.</p>
+        </article>
+        <article class="card">
+          <h3>Continuidade</h3>
+          <p>Acompanhamento estruturado para que o plano seja revisado conforme a vida real acontece.</p>
+        </article>
+      </div>
+    </section>
 
-  <br>
+    <section id="contato" class="section contact">
+      <div class="eyebrow">Atendimento mediante agendamento</div>
+      <h2>Inicie uma avaliação médica com a Insight.</h2>
+      <p>
+        Entre em contato para verificar disponibilidade, perfil de atendimento e próximos horários para consulta.
+      </p>
+      <a class="btn" href="https://wa.me/5516993275080">Solicitar agendamento</a>
+      <div class="contact-details">
+        +55 16 99327-5080<br>
+        aaron.rinhel@unesp.br
+      </div>
+    </section>
+  </main>
 
-  <a class="btn" href="https://wa.me/5516993275080">
-    Solicitar avaliação
-  </a>
-
-  <p style="margin-top:20px;color:#777;">
-    +55 16 99327-5080<br>
-    aaron.rinhel@unesp.br
-  </p>
-</section>
-
-<footer>
-  © 2026 Dr. Aaron Rinhel • CRM/SP 209595
-</footer>
-
+  <footer>
+    © 2026 Insight Clínica Premium • Responsável técnico: Dr. Aaron Rinhel • CRM/SP 209595
+  </footer>
 </div>
 
-<a class="whatsapp" href="https://wa.me/5516993275080">
+<a class="whatsapp" href="https://wa.me/5516993275080" aria-label="Conversar pelo WhatsApp">
   WhatsApp
 </a>
-
 </body>
 </html>
